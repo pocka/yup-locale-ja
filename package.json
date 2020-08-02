@@ -1,0 +1,60 @@
+{
+  "name": "yup-locale-ja",
+  "version": "0.0.0",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Shota Fuji",
+      "email": "pockawoooh@gmail.com",
+      "url": "https://github.com/pocka"
+    }
+  ],
+  "keywords": [
+    "yup",
+    "locale"
+  ],
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "esm",
+    "cjs",
+    "es5"
+  ],
+  "peerDependencies": {
+    "yup": "0.x"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.8",
+    "@types/yup": "^0.29.3",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7",
+    "yup": "^0.29.2"
+  },
+  "scripts": {
+    "build:esm": "tsc --outDir esm",
+    "build:cjs": "tsc --outDir cjs -m commonjs",
+    "build:es5": "tsc --outDir es5 -t ES5",
+    "build": "yarn build:esm && yarn build:cjs && yarn build:es5",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testMatch": [
+      "**/tests/**/*.[jt]s"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,md,json}": "prettier --write"
+  },
+  "prettier": {}
+}

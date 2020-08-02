@@ -1,0 +1,11 @@
+# Common
+*.log
+
+# Project
+/esm
+/cjs
+/es5
+
+# Node.js / JS / TS / etc...
+node_modules
+*.tgz
