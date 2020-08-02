@@ -19,7 +19,8 @@
   "files": [
     "esm",
     "cjs",
-    "es5"
+    "es5",
+    "README_ja.md"
   ],
   "peerDependencies": {
     "yup": "0.x"
