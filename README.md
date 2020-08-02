@@ -1,8 +1,8 @@
 # yup-locale-ja
 
 [![npm](https://img.shields.io/npm/v/yup-locale-ja)](https://www.npmjs.com/package/yup-locale-ja)
-[![Automated Tests Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Test)](https://github.com/pocka/yup-locale-ja/actions?query=workflow%3ATest)
-[![Automated Publish Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Publish)](https://github.com/pocka/yup-locale-ja/actions?query=workflow%3APublish)
+[![Automated Tests Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Test?label=test&logo=github)](https://github.com/pocka/yup-locale-ja/actions?query=workflow%3ATest)
+[![Automated Publish Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Publish?label=publish&logo=github)](https://github.com/pocka/yup-locale-ja/actions?query=workflow%3APublish)
 
 Japanese localization for [yup](https://github.com/jquense/yup) messages, with translation flavors.
 
