@@ -1,8 +1,8 @@
 # yup-locale-ja
 
-![npm](https://img.shields.io/npm/v/yup-locale-ja)
-![Automated Tests Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Test)
-![Automated Publish Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Publish)
+[![npm](https://img.shields.io/npm/v/yup-locale-ja)](https://www.npmjs.com/package/yup-locale-ja)
+[![Automated Tests Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Test)](https://github.com/pocka/yup-locale-ja/actions?query=workflow%3ATest)
+[![Automated Publish Status](https://img.shields.io/github/workflow/status/pocka/yup-locale-ja/Publish)](https://github.com/pocka/yup-locale-ja/actions?query=workflow%3APublish)
 
 [yup](https://github.com/jquense/yup)のエラーメッセージを日本語化するパッケージです。
 スタイルの異なる 2 種類の翻訳が用意されています。
