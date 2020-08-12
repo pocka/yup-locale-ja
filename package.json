@@ -9,6 +9,10 @@
       "url": "https://github.com/pocka"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pocka/yup-locale-ja.git"
+  },
   "keywords": [
     "yup",
     "locale"
