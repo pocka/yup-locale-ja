@@ -46,7 +46,7 @@ ja.descriptive; // descriptive messages
 Add a label by calling [`.label`](https://github.com/jquense/yup#mixedlabellabel-string-schema) method on the field.
 This package omits a field path unless a label is set.
 
-## Related Projects
+## Similar Projects
 
 - [loicmahieu/yup-locales](https://github.com/loicmahieu/yup-locales) ... `fr`, `nl`, `nb`, `de`, `ar`
 - [arfurlaneto/yup-locale-pt](https://github.com/arfurlaneto/yup-locale-pt) ... `pt` with three translation flavors
