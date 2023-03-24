@@ -1,4 +1,5 @@
 import * as yup from "yup";
+import { it, expect } from "vitest";
 
 import { descriptive } from "../src";
 
@@ -10,25 +11,18 @@ it("Should omit field label by default", async () => {
     bar: yup.string().required().label("bar"),
   });
 
-  try {
-    await schema.validate(
-      {
-        foo: "",
-        bar: "",
-      },
-      {
-        abortEarly: false,
-      }
-    );
+  const promise = schema.validate({ foo: "", bar: "" }, { abortEarly: false });
 
-    fail("Should throw ValidationError");
-  } catch (e) {
-    expect(e).toBeInstanceOf(yup.ValidationError);
+  await expect(promise).rejects.toThrow(yup.ValidationError);
 
-    const foo = (e as yup.ValidationError).inner.find((x) => x.path === "foo");
-    const bar = (e as yup.ValidationError).inner.find((x) => x.path === "bar");
+  const errors: yup.ValidationError = await promise.then(
+    () => Promise.reject(new Error("Unreachable")),
+    (err) => Promise.resolve(err)
+  );
 
-    expect(foo?.message).toMatch("必須です");
-    expect(bar?.message).toMatch("barは必須です");
-  }
+  const foo = errors.inner.find((x) => x.path === "foo");
+  const bar = errors.inner.find((x) => x.path === "bar");
+
+  expect(foo?.message).toEqual("必須です");
+  expect(bar?.message).toEqual("barは必須です");
 });
