@@ -2723,7 +2723,7 @@ __metadata:
     vitest: ^0.29.7
     yup: ^1.0.2
   peerDependencies:
-    yup: 0.x
+    yup: 0.x || 1.x
   languageName: unknown
   linkType: soft
 
