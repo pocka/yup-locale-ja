@@ -9,3 +9,13 @@
 # Node.js / JS / TS / etc...
 node_modules
 *.tgz
+
+# Yarn Berry
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+# `sdks` is excluded because it's an environment specific files.
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions

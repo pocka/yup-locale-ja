@@ -46,7 +46,7 @@
     "build:es5": "tsc --outDir es5 -t ES5",
     "build": "yarn build:esm && yarn build:cjs && yarn build:es5",
     "test": "jest",
-    "prepare": "yarn build"
+    "prepack": "yarn build"
   },
   "husky": {
     "hooks": {
@@ -62,5 +62,6 @@
   "lint-staged": {
     "*.{js,ts,md,json}": "prettier --write"
   },
-  "prettier": {}
+  "prettier": {},
+  "packageManager": "yarn@3.5.0"
 }
