@@ -75,6 +75,8 @@ export const array: yup.LocaleObject["array"] = {
     (label ? label + "は" : "") + `${min}つ以上入力してください`,
   max: ({ label, max }) =>
     (label ? label + "は" : "") + `${max}つ以下にしてください`,
+  length: ({ label, length }) =>
+    (label ? label + "は" : "") + `${length}つにしてください`,
 };
 
 /**
