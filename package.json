@@ -27,17 +27,16 @@
     "README_ja.md"
   ],
   "peerDependencies": {
-    "yup": "0.x"
+    "yup": "0.x || 1.x"
   },
   "devDependencies": {
-    "@types/yup": "^0.29.3",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "typescript": "^5.0.2",
     "vite": "^4.2.1",
     "vitest": "^0.29.7",
-    "yup": "^0.29.2"
+    "yup": "^1.0.2"
   },
   "scripts": {
     "build:esm": "tsc --outDir esm",

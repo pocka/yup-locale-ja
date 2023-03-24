@@ -2,10 +2,7 @@ import type * as yup from "yup";
 
 // NOTE: `notType` is omitted because it's too hard to users to understand the
 //       concept and what's happening. Write your own if you need that one.
-// NOTE: @types/yup currently missing `mixed.defined` field definition.
-export const mixed: yup.MixedLocale & {
-  defined: yup.MixedLocale["default"];
-} = {
+export const mixed: yup.LocaleObject["mixed"] = {
   default: ({ label }) => (label ? label + "の" : "") + "値が不正です",
   required: ({ label }) => (label ? label + "は" : "") + "必須です",
   oneOf: ({ label, values }) =>
@@ -16,8 +13,7 @@ export const mixed: yup.MixedLocale & {
   defined: ({ label }) => (label ? label + "は" : "") + "必須です",
 };
 
-// NOTE: @types/yup currently missing `string.uuid` field definition.
-export const string: yup.StringLocale & { uuid: yup.StringLocale["email"] } = {
+export const string: yup.LocaleObject["string"] = {
   length: ({ label, length }) =>
     (label ? label + "は" : "") + `${length}文字である必要があります`,
   min: ({ label, min }) =>
@@ -38,10 +34,7 @@ export const string: yup.StringLocale & { uuid: yup.StringLocale["email"] } = {
     (label ? label + "には" : "") + "大文字のみ入力できます",
 };
 
-// NOTE: @types/yup currently missing `string.notEqual` field definition.
-export const number: yup.NumberLocale & {
-  notEqual(ctx: { notEqual: number } & Partial<yup.TestMessageParams>): any;
-} = {
+export const number: yup.LocaleObject["number"] = {
   min: ({ label, min }) =>
     (label ? label + "には" : "") + `${min}以上の数のみ入力可能です`,
   max: ({ label, max }) =>
@@ -50,8 +43,6 @@ export const number: yup.NumberLocale & {
     (label ? label + "には" : "") + `${less}未満の数のみ入力可能です`,
   moreThan: ({ label, more }) =>
     (label ? label + "には" : "") + `${more}より大きい数のみ入力可能です`,
-  notEqual: ({ label, notEqual }) =>
-    (label ? label + "は" : "") + `${notEqual}以外の数である必要があります`,
   positive: ({ label }) =>
     (label ? label + "には" : "") + "正の数のみ入力できます",
   negative: ({ label }) =>
@@ -61,24 +52,21 @@ export const number: yup.NumberLocale & {
 };
 
 // To format date, use the second argument of yup.date().min/max.
-export const date: yup.DateLocale = {
+export const date: yup.LocaleObject["date"] = {
   min: ({ label, min }) =>
     (label ? label + "には" : "") + `${min}以降の日付のみ入力可能です`,
   max: ({ label, max }) =>
     (label ? label + "には" : "") + `${max}以前の日付のみ入力可能です`,
 };
 
-export const object: yup.ObjectLocale = {
-  noUnknown: ({
-    label,
-    unknown,
-  }: { unknown?: string } & Partial<yup.TestMessageParams>) =>
+export const object: yup.LocaleObject["object"] = {
+  noUnknown: ({ label, unknown }: { label?: string; unknown?: string }) =>
     (label ? label + "には" : "") +
     "登録されていないキーは入力できません" +
     (unknown ? ": " + unknown : ""),
 };
 
-export const array: yup.ArrayLocale = {
+export const array: yup.LocaleObject["array"] = {
   min: ({ label, min }) => (label ? label + "は" : "") + `${min}つ以上必要です`,
   max: ({ label, max }) =>
     (label ? label + "は" : "") + `${max}つまで入力できます`,
