@@ -19,9 +19,11 @@ jobs:
           cache: yarn
       - name: Install dependencies
         run: yarn install --immutable
-      - name: Publish
+      - name: Configure Yarn to use proper registry and auth
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
-          yarn npm publish
+          yarn config set npmPublishRegistry "https://registry.npmjs.org"
+          yarn config set npmAuthToken $NPM_AUTH_TOKEN
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Publish
+        run: yarn npm publish
